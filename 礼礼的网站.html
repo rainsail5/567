@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奇妙互动空间</title>
+    <style>
+        body {
+            font-family: '宋体';
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+     .mystery-box {
+            width: 300px;
+            height: 300px;
+            background-color: #3498db;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+     .revealed-content {
+            display: none;
+            width: 400px;
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mystery-box" onclick="toggleContent()">点击探索</div>
+    <div class="revealed-content" id="revealed-content">
+        <p>恭喜你触发了隐藏内容！这里充满了惊喜。</p>
+        <p>每一次探索，都可能发现新的奇妙之处。</p>
+        <button onclick="changeBackground()">改变背景</button>
+    </div>
+    <script>
+        function toggleContent() {
+            var content = document.getElementById('revealed-content');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        function changeBackground() {
+            document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+    </script>
+</body>
+
+</html>
